@@ -6,33 +6,31 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import javax.swing.JFrame;
-import modelo.VentanaPrincipalModelo;
+import modelo.ListaClientes;
+import modelo.ListaProductos;
+import modelo.ListaProveedores;
+import vista.VentanaClientes;
+import vista.VentanaComprar;
 import vista.VentanaPrincipal;
 import vista.VentanaProductos;
 import vista.VentanaProveedores;
+import vista.VentanaVender;
 
 /**
- *
- * @author jsmr0
+ * Autor(es):Juan Sebastian Muñoz Rojas <juan.munoz.rojas@correounivalle.edu.co> 
+              Carol Sofia Rubiano Valderrama <carol.rubiano@correounivalle.edu.co>  
+ * 
  */
-public class VentanaPrincipalControlador  implements ActionListener, MouseListener, ItemListener, PropertyChangeListener{
+public class VentanaPrincipalControlador  implements ActionListener{
     VentanaPrincipal vista;
-    VentanaPrincipalModelo modelo;
     
-    public VentanaPrincipalControlador(VentanaPrincipalModelo modelo, VentanaPrincipal vista){
-        this.modelo = modelo;
+    public VentanaPrincipalControlador(VentanaPrincipal vista){
         this.vista = vista;        
         
         vista.setVisible(true);
         vista.setLocationRelativeTo(null); 
-        vista.setTitle ("Servicio de Salud Univalle");
+        vista.setTitle ("Supermercado Univalle");
         vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vista.setVisible(true); 
         vista.setResizable(false);
@@ -40,7 +38,6 @@ public class VentanaPrincipalControlador  implements ActionListener, MouseListen
         vista.getBotonAñadirProveedor().addActionListener(this);
         vista.getBotonAñadirProductos().addActionListener(this);
         vista.getBotonAñadirCliente().addActionListener(this);
-        vista.getBotonAsignarProducto().addActionListener(this);
         vista.getBotonComprar().addActionListener(this);
         vista.getBotonVender().addActionListener(this);         
     }
@@ -49,46 +46,22 @@ public class VentanaPrincipalControlador  implements ActionListener, MouseListen
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(vista.getBotonAñadirProveedor())){
             VentanaProveedores vista = new VentanaProveedores();
-            VentanaProveedoresControlador controlador = new VentanaProveedoresControlador(vista);
-        }
-        if(e.getSource().equals(vista.getBotonAñadirProductos())){
+            ListaProveedores modelo = new ListaProveedores();
+            VentanaProveedoresControlador controlador = new VentanaProveedoresControlador(vista, modelo);
+        }else if(e.getSource().equals(vista.getBotonAñadirCliente())){
+            VentanaClientes vista = new VentanaClientes();
+            ListaClientes modelo = new ListaClientes();
+            VentanaClientesControlador controlador = new VentanaClientesControlador(vista, modelo);
+        }else if(e.getSource().equals(vista.getBotonAñadirProductos())){
             VentanaProductos vista = new VentanaProductos();
-            VentanaProductosControlador controlador = new VentanaProductosControlador(vista);
-        }        
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            ListaProductos modelo = new ListaProductos();
+            VentanaProductosControlador controlador = new VentanaProductosControlador(vista, modelo);
+        }else if(e.getSource().equals(vista.getBotonComprar())){
+            VentanaComprar vista = new VentanaComprar();
+            VentanaComprarControlador controlador = new VentanaComprarControlador(vista);
+        }else if(e.getSource().equals(vista.getBotonVender())){
+            VentanaVender vista = new VentanaVender();
+            VentanaVenderControlador controlador = new VentanaVenderControlador(vista);            
+        }
     }
 }

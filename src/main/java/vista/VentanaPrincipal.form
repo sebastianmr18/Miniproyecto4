@@ -41,12 +41,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelContenido" alignment="0" max="32767" attributes="0"/>
+              <Component id="PanelContenido" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelContenido" alignment="1" max="32767" attributes="0"/>
+              <Component id="PanelContenido" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -54,7 +54,7 @@
         <Container class="javax.swing.JPanel" name="PanelContenido">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+              <Color blue="cc" green="0" red="0" type="rgb"/>
             </Property>
           </Properties>
 
@@ -64,22 +64,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="68" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="BotonAñadirProveedor" max="32767" attributes="0"/>
-                              <Component id="BotonAñadirProductos" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="BotonAñadirCliente" min="-2" pref="115" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="BotonAsignarProducto" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotonComprar" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotonVender" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BotonVender" pref="288" max="32767" attributes="0"/>
+                          <Component id="BotonComprar" pref="288" max="32767" attributes="0"/>
+                          <Component id="BotonAñadirProductos" max="32767" attributes="0"/>
+                          <Component id="BotonAñadirProveedor" max="32767" attributes="0"/>
+                          <Component id="BotonAñadirCliente" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
@@ -90,22 +84,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BotonAsignarProducto" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BotonAñadirProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BotonComprar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BotonAñadirProductos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BotonVender" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BotonAñadirCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="102" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="BotonAñadirProveedor" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="BotonAñadirProductos" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="BotonAñadirCliente" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Component id="BotonComprar" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="BotonVender" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -113,15 +102,24 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Supermercado Univalle"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="BotonA&#xf1;adirProveedor">
               <Properties>
-                <Property name="text" type="java.lang.String" value="a&#xf1;adir proveedor"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="A&#xd1;ADIR PROVEEDOR"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonA&#xf1;adirProveedorActionPerformed"/>
@@ -129,7 +127,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="BotonA&#xf1;adirProductos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="a&#xf1;adir producto"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="A&#xd1;ADIR PRODUCTO"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonA&#xf1;adirProductosActionPerformed"/>
@@ -137,23 +138,36 @@
             </Component>
             <Component class="javax.swing.JButton" name="BotonA&#xf1;adirCliente">
               <Properties>
-                <Property name="text" type="java.lang.String" value="a&#xf1;adir cliente"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="A&#xd1;ADIR CLIENTE"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonA&#xf1;adirClienteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotonVender">
               <Properties>
-                <Property name="text" type="java.lang.String" value="vender"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="REGISTRAR VENTA"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="BotonAsignarProducto">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="asignar producto"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVenderActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotonComprar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="comprar"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="REGISTRAR COMPRA"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonComprarActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

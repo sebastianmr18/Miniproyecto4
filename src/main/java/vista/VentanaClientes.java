@@ -4,17 +4,163 @@
  */
 package vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import modelo.ListaClientes;
+
 /**
+ * Autor(es):Juan Sebastian Muñoz Rojas <juan.munoz.rojas@correounivalle.edu.co> 
+              Carol Sofia Rubiano Valderrama <carol.rubiano@correounivalle.edu.co>  
  *
- * @author jsmr0
  */
 public class VentanaClientes extends javax.swing.JFrame {
-
+    DefaultTableModel dtm;
+    ListaClientes modelo;
     /**
      * Creates new form VenataClientes
      */
     public VentanaClientes() {
+        this.dtm = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };          
         initComponents();
+        
+        modelo = new ListaClientes();
+        modelo.crearArrayList();        
+    }
+    
+    public void crearTabla(){
+        String[] titulo = new String[]{"Cliente", "ID"};
+        
+        dtm.setColumnIdentifiers(titulo);
+        TablaClientes.setModel(dtm);
+    }
+    
+    public void llenarTabla(){
+        dtm.addRow(new Object[]{
+            getClientes(),
+            getIDClientes()
+        });
+    }   
+    
+    public String getClientes(){
+        return TextoCliente.getText();
+    }
+    
+    public String getIDClientes(){
+        return TextoIDCliente.getText();
+    }    
+    
+    public JButton getBotonVolver() {
+        return BotonVolver;
+    }
+
+    public void setBotonVolver(JButton BotonVolver) {
+        this.BotonVolver = BotonVolver;
+    }      
+
+    public JButton getBotonAgregar() {
+        return BotonAgregar;
+    }
+
+    public void setBotonAgregar(JButton BotonAgregar) {
+        this.BotonAgregar = BotonAgregar;
+    }
+
+    public JButton getBotonEliminar() {
+        return BotonEliminar;
+    }
+
+    public void setBotonEliminar(JButton BotonEliminar) {
+        this.BotonEliminar = BotonEliminar;
+    }
+
+    public JButton getBotonModificar() {
+        return BotonModificar;
+    }
+
+    public void setBotonModificar(JButton BotonModificar) {
+        this.BotonModificar = BotonModificar;
+    }
+
+    public JButton getBotonNuevo() {
+        return BotonNuevo;
+    }
+
+    public void setBotonNuevo(JButton BotonNuevo) {
+        this.BotonNuevo = BotonNuevo;
+    }
+
+    public JLabel getLabelCliente() {
+        return LabelCliente;
+    }
+
+    public void setLabelCliente(JLabel LabelCliente) {
+        this.LabelCliente = LabelCliente;
+    }
+
+    public JLabel getLabelIDCliente() {
+        return LabelIDCliente;
+    }
+
+    public void setLabelIDCliente(JLabel LabelIDCliente) {
+        this.LabelIDCliente = LabelIDCliente;
+    }
+
+    public JTable getTablaClientes() {
+        return TablaClientes;
+    }
+
+    public void setTablaClientes(JTable TablaClientes) {
+        this.TablaClientes = TablaClientes;
+    }
+
+    public JTextField getTextoCliente() {
+        return TextoCliente;
+    }
+
+    public void setTextoCliente(JTextField TextoCliente) {
+        this.TextoCliente = TextoCliente;
+    }
+
+    public JTextField getTextoIDCliente() {
+        return TextoIDCliente;
+    }
+
+    public void setTextoIDCliente(JTextField TextoIDCliente) {
+        this.TextoIDCliente = TextoIDCliente;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
     }
 
     /**
@@ -26,21 +172,159 @@ public class VentanaClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        LabelCliente = new javax.swing.JLabel();
+        LabelIDCliente = new javax.swing.JLabel();
+        TextoCliente = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaClientes = new javax.swing.JTable();
+        TextoIDCliente = new javax.swing.JTextField();
+        BotonAgregar = new javax.swing.JButton();
+        BotonModificar = new javax.swing.JButton();
+        BotonEliminar = new javax.swing.JButton();
+        BotonNuevo = new javax.swing.JButton();
+        BotonVolver = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Registrar clientes");
+
+        LabelCliente.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        LabelCliente.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCliente.setText("Cliente:");
+
+        LabelIDCliente.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        LabelIDCliente.setForeground(new java.awt.Color(255, 255, 255));
+        LabelIDCliente.setText("ID cliente:");
+
+        TextoCliente.setEnabled(false);
+
+        TablaClientes.setBackground(new java.awt.Color(0, 204, 255));
+        TablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TablaClientes.getTableHeader().setResizingAllowed(false);
+        TablaClientes.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(TablaClientes);
+
+        TextoIDCliente.setEnabled(false);
+
+        BotonAgregar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonAgregar.setText("Agregar");
+        BotonAgregar.setEnabled(false);
+
+        BotonModificar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonModificar.setText("Modificar");
+        BotonModificar.setEnabled(false);
+
+        BotonEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonEliminar.setText("Eliminar");
+        BotonEliminar.setEnabled(false);
+
+        BotonNuevo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonNuevo.setText("Nuevo");
+
+        BotonVolver.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonVolver.setText("Volver al inicio");
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(LabelIDCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TextoIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(LabelCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TextoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BotonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonEliminar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotonAgregar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(BotonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(241, 241, 241)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(23, 23, 23))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelCliente)
+                            .addComponent(TextoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelIDCliente)
+                            .addComponent(TextoIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BotonNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                            .addComponent(BotonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(52, Short.MAX_VALUE))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +363,18 @@ public class VentanaClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAgregar;
+    private javax.swing.JButton BotonEliminar;
+    private javax.swing.JButton BotonModificar;
+    private javax.swing.JButton BotonNuevo;
+    private javax.swing.JButton BotonVolver;
+    private javax.swing.JLabel LabelCliente;
+    private javax.swing.JLabel LabelIDCliente;
+    private javax.swing.JTable TablaClientes;
+    private javax.swing.JTextField TextoCliente;
+    private javax.swing.JTextField TextoIDCliente;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

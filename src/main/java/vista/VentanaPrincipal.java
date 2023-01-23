@@ -5,22 +5,15 @@
 package vista;
 
 /**
- *
- * @author jsmr0
+ * Autor(es):Juan Sebastian Muñoz Rojas <juan.munoz.rojas@correounivalle.edu.co> 
+              Carol Sofia Rubiano Valderrama <carol.rubiano@correounivalle.edu.co>  
+ * 
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     public VentanaPrincipal() {
         initComponents();
         System.out.println("xd");
-    }
-
-    public javax.swing.JButton getBotonAsignarProducto() {
-        return BotonAsignarProducto;
-    }
-
-    public void setBotonAsignarProducto(javax.swing.JButton BotonAsignarProducto) {
-        this.BotonAsignarProducto = BotonAsignarProducto;
     }
 
     public javax.swing.JButton getBotonAñadirCliente() {
@@ -84,38 +77,57 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonAñadirProductos = new javax.swing.JButton();
         BotonAñadirCliente = new javax.swing.JButton();
         BotonVender = new javax.swing.JButton();
-        BotonAsignarProducto = new javax.swing.JButton();
         BotonComprar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1200, 900));
 
-        PanelContenido.setBackground(new java.awt.Color(204, 255, 255));
+        PanelContenido.setBackground(new java.awt.Color(0, 0, 204));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Supermercado Univalle");
 
-        BotonAñadirProveedor.setText("añadir proveedor");
+        BotonAñadirProveedor.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonAñadirProveedor.setText("AÑADIR PROVEEDOR");
         BotonAñadirProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonAñadirProveedorActionPerformed(evt);
             }
         });
 
-        BotonAñadirProductos.setText("añadir producto");
+        BotonAñadirProductos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonAñadirProductos.setText("AÑADIR PRODUCTO");
         BotonAñadirProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonAñadirProductosActionPerformed(evt);
             }
         });
 
-        BotonAñadirCliente.setText("añadir cliente");
+        BotonAñadirCliente.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonAñadirCliente.setText("AÑADIR CLIENTE");
+        BotonAñadirCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAñadirClienteActionPerformed(evt);
+            }
+        });
 
-        BotonVender.setText("vender");
+        BotonVender.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonVender.setText("REGISTRAR VENTA");
+        BotonVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVenderActionPerformed(evt);
+            }
+        });
 
-        BotonAsignarProducto.setText("asignar producto");
-
-        BotonComprar.setText("comprar");
+        BotonComprar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotonComprar.setText("REGISTRAR COMPRA");
+        BotonComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonComprarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelContenidoLayout = new javax.swing.GroupLayout(PanelContenido);
         PanelContenido.setLayout(PanelContenidoLayout);
@@ -124,19 +136,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(PanelContenidoLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(PanelContenidoLayout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(BotonAñadirProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotonAñadirProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(BotonAñadirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
+                .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenidoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(BotonAsignarProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonComprar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonVender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BotonVender, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                    .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(BotonComprar, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                        .addComponent(BotonAñadirProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonAñadirProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonAñadirCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(60, 60, 60))
         );
         PanelContenidoLayout.setVerticalGroup(
@@ -144,30 +153,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(PanelContenidoLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAsignarProducto)
-                    .addComponent(BotonAñadirProveedor))
-                .addGap(88, 88, 88)
-                .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonComprar)
-                    .addComponent(BotonAñadirProductos))
-                .addGap(88, 88, 88)
-                .addGroup(PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonVender)
-                    .addComponent(BotonAñadirCliente))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(BotonAñadirProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotonAñadirProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotonAñadirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotonVender, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelContenido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,6 +198,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void BotonAñadirProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAñadirProductosActionPerformed
         this.dispose();
     }//GEN-LAST:event_BotonAñadirProductosActionPerformed
+
+    private void BotonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComprarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonComprarActionPerformed
+
+    private void BotonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVenderActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonVenderActionPerformed
+
+    private void BotonAñadirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAñadirClienteActionPerformed
+        this.dispose(); 
+    }//GEN-LAST:event_BotonAñadirClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,7 +247,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAsignarProducto;
     private javax.swing.JButton BotonAñadirCliente;
     private javax.swing.JButton BotonAñadirProductos;
     private javax.swing.JButton BotonAñadirProveedor;

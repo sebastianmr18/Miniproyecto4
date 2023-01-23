@@ -6,18 +6,30 @@
 package com.mycompany.miniproyecto4;
 
 import controlador.VentanaPrincipalControlador;
-import modelo.VentanaPrincipalModelo;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import modelo.Clientes;
+import modelo.Productos;
+import modelo.Proveedores;
 import vista.VentanaPrincipal;
 
 /**
- *
- * @author jsmr0
+ * Autor(es): Juan Sebastian Muñoz Rojas <juan.munoz.rojas@correounivalle.edu.co> 
+              Carol Sofia Rubiano Valderrama <carol.rubiano@correounivalle.edu.co>  
+ * 
  */
 public class Miniproyecto4 {
+    
+    public static ArrayList <Proveedores> proveedores;
+    public static ArrayList <Clientes> clientes;   
+    public static ArrayList <Productos> productos;       
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        proveedores = new ArrayList<>();
+        clientes = new ArrayList<>(); 
+        productos = new ArrayList<>(); 
+        
         VentanaPrincipal vista = new VentanaPrincipal();
-        VentanaPrincipalModelo modelo = new VentanaPrincipalModelo();
-        VentanaPrincipalControlador controlador = new VentanaPrincipalControlador(modelo, vista);        
+        VentanaPrincipalControlador controlador = new VentanaPrincipalControlador(vista);      
     }
 }
